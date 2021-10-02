@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      name: claim-service
+      discovery:
+        enabled: true
+        service-id: configuration-server

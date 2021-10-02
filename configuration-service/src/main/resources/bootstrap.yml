@@ -1,0 +1,18 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: configuration-service
+  cloud:
+    config:
+      server:
+        git:
+          uri: file:///${user.home}/config-repo
+
+eureka:
+  client:
+    region: default
+      service-url:
+        defaultZone: http://localhost:9091/eureka
+
