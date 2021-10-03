@@ -31,7 +31,7 @@ public class CustomerController {
          customerService.addCustomer(customer);
     }
 
-    @PostMapping
+    @PostMapping("/update")
     public void updateCustomer(@RequestBody Customer customer) {
          customerService.updateCustomer(customer);
     }

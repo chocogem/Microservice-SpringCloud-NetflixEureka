@@ -25,7 +25,7 @@ public class PolicyController {
     public Policy findPolicyByPolicyNo(@PathVariable String policyNo) {
         return policyService.findPolicyByPolicyNo(policyNo);
     }
-    @GetMapping("findByIdNumber/{idNumber}")
+    @GetMapping("/findByIdNumber/{idNumber}")
     public List<Policy> findPolicyByIdNumber(@PathVariable String idNumber) {
         return policyService.findPolicyByIdNumber(idNumber);
     }
@@ -34,12 +34,12 @@ public class PolicyController {
          policyService.addPolicy(policy);
     }
 
-    @PostMapping
+    @PostMapping("/update")
     public void updatePolicy(@RequestBody Policy policy) {
          policyService.updatePolicy(policy);
     }
 
-    @DeleteMapping("delete/{policyNo}")
+    @DeleteMapping("/delete/{policyNo}")
     public void deletePolicy(@PathVariable String policyNo) {
         policyService.deletePolicy(policyNo);
     }

@@ -32,7 +32,7 @@ public class ClaimController {
         return claimService.addClaim(claim);
     }
 
-    @PostMapping
+    @PutMapping("/update")
     public Claim updateClaim(@RequestBody Claim claim) {
         return claimService.updateClaim(claim);
     }

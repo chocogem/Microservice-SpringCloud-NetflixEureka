@@ -4,6 +4,7 @@ import com.example.customerservice.policy.client.PolicyClient;
 import com.example.customerservice.policy.entity.Policy;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
