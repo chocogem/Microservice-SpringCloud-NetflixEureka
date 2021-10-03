@@ -1,3 +1,8 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9091/eureka
+
 spring:
   cloud:
     config:
@@ -5,3 +10,6 @@ spring:
       discovery:
         enabled: true
         service-id: configuration-server
+      override-system-properties: false
+      allow-override: true
+      override-none: true

@@ -6,6 +6,7 @@ import com.example.policyservice.policy.entity.Policy;
 import com.example.policyservice.policy.repository.PolicyRepository;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
