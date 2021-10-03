@@ -1,0 +1,25 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: configuration-server
+  profiles:
+    active: composite
+  cloud:
+    config:
+      server:
+        composite:
+          - type: native
+            search-locations: file:///${user.home}/config-repo
+        bootstrap: true
+        #git:
+        # uri: file:///${user.home}/config-repo
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9091/eureka
+
+
+
