@@ -29,14 +29,14 @@ public class PolicyController {
     public List<Policy> findPolicyByIdNumber(@PathVariable String idNumber) {
         return policyService.findPolicyByIdNumber(idNumber);
     }
-    @PostMapping
-    public void addNewPolicy(@RequestBody Policy policy) {
-         policyService.addPolicy(policy);
+    @PostMapping("/add")
+    public Policy addNewPolicy(@RequestBody Policy policy) {
+         return policyService.addPolicy(policy);
     }
 
     @PostMapping("/update")
-    public void updatePolicy(@RequestBody Policy policy) {
-         policyService.updatePolicy(policy);
+    public Policy updatePolicy(@RequestBody Policy policy) {
+        return policyService.updatePolicy(policy);
     }
 
     @DeleteMapping("/delete/{policyNo}")

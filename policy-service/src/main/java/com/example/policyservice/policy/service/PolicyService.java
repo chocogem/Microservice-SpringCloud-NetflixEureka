@@ -6,12 +6,13 @@ import com.example.policyservice.policy.entity.Policy;
 import com.example.policyservice.policy.repository.PolicyRepository;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class PolicyService {
@@ -44,12 +45,11 @@ public class PolicyService {
     @HystrixCommand(fallbackMethod = "fallbackFindPolicyByIdNumber")
     public List<Policy> findPolicyByIdNumber(String idNumber) {
         List<Policy> policy = policyRepository.findByIdNumber(idNumber);
-        policy.stream().filter( p -> {
+        policy.stream().filter(Objects::nonNull)
+                .collect(Collectors.toList()).forEach(p -> {
             List<Claim> claims = claimClient.findClaimByPolicyNo(p.getPolicyNo());
             p.setClaims(claims);
-            return true;
         });
-
         return policy;
     }
     private Policy fallbackFindPolicyByIdNumber() {

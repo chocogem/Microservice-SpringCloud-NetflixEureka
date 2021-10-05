@@ -1,17 +1,16 @@
 package com.example.customerservice.customer.service;
 
+import com.example.customerservice.customer.entity.Customer;
+import com.example.customerservice.customer.repository.CustomerRepository;
 import com.example.customerservice.policy.client.PolicyClient;
 import com.example.customerservice.policy.entity.Policy;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
-import com.example.customerservice.customer.entity.Customer;
-import com.example.customerservice.customer.repository.CustomerRepository;
 @Service
 public class CustomerService {
     @Autowired
@@ -41,11 +40,11 @@ public class CustomerService {
         return customer;
     }
 
-    public void addCustomer(Customer customer) {
-        customerRepository.save(customer);
+    public Customer addCustomer(Customer customer) {
+        return customerRepository.save(customer);
     }
-    public void updateCustomer(Customer customer) {
-         customerRepository.save(customer);
+    public Customer updateCustomer(Customer customer) {
+        return customerRepository.save(customer);
     }
     public void deleteCustomer(String customerId) {
         customerRepository.deleteById(customerId);
