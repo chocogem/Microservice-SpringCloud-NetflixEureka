@@ -27,7 +27,7 @@ public class ClaimController {
     List<Claim> findClaimByPolicyNo(@PathVariable String policyNo){
         return claimService.findClaimByPolicyNo(policyNo);
     }
-    @PostMapping
+    @PostMapping("/add")
     public Claim addNewCliam(@RequestBody Claim claim) {
         return claimService.addClaim(claim);
     }

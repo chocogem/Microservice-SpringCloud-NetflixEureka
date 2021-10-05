@@ -26,14 +26,14 @@ public class CustomerController {
         return customerService.findCustomerByCustomerId(customerId);
     }
 
-    @PostMapping
-    public void addNewCustomer(@RequestBody Customer customer) {
-         customerService.addCustomer(customer);
+    @PostMapping("/add")
+    public Customer addNewCustomer(@RequestBody Customer customer) {
+         return customerService.addCustomer(customer);
     }
 
     @PostMapping("/update")
-    public void updateCustomer(@RequestBody Customer customer) {
-         customerService.updateCustomer(customer);
+    public Customer updateCustomer(@RequestBody Customer customer) {
+        return customerService.updateCustomer(customer);
     }
 
     @DeleteMapping("/delete/{customerId}")
