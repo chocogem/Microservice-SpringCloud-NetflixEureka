@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
-@FeignClient(name = "policy-service")
+@FeignClient("policy-service")
 public interface PolicyClient {
 
     @GetMapping("/policies/findByIdNumber/{idNumber}")
