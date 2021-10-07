@@ -19,10 +19,17 @@ The following was discovered as part of building this project:
  
 
 
-### Reference Documentation
-For further reference, please consider the following sections:
+## Built With
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.5.6-SNAPSHOT/maven-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.5.6-SNAPSHOT/maven-plugin/reference/html/#build-image)
+* Intelij 2020.1.1
+* Maven
+* Java
+* Spring boot
+* MongoDb
+* Eureka
+* Spring cloud
+
+## Authors
+
+* **Chocogem** - *Initial work* - [chocogem](https://github.com/chocogem)
 
