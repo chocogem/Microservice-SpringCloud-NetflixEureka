@@ -1,5 +1,7 @@
 package com.example.customerservice.customer.service;
 
+import com.example.customerservice.claim.client.ClaimClient;
+import com.example.customerservice.claim.entity.Claim;
 import com.example.customerservice.customer.entity.Customer;
 import com.example.customerservice.customer.repository.CustomerRepository;
 import com.example.customerservice.policy.client.PolicyClient;
@@ -10,7 +12,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
+import java.util.stream.Collectors;
+
 @Service
 public class CustomerService {
     @Autowired
@@ -18,6 +23,9 @@ public class CustomerService {
 
     @Autowired
     private PolicyClient policyClient;
+
+    @Autowired
+    private ClaimClient claimClient;
 
     public List<Customer> findAllCustomer() {
         return customerRepository.findAll();
@@ -29,6 +37,11 @@ public class CustomerService {
         Optional<Customer> customer = customerRepository.findById(customerId);
         customer.ifPresent(c -> {
             List<Policy> policies = policyClient.findPolicyByIdNumber(c.getIdNumber());
+            policies.stream().filter(Objects::nonNull)
+                    .collect(Collectors.toList()).forEach(p -> {
+                List<Claim> claims = claimClient.findClaimByPolicyNo(p.getPolicyNo());
+                p.setClaims(claims);
+            });
             c.setPolicies(policies);
         });
 

@@ -45,11 +45,6 @@ public class PolicyService {
     @HystrixCommand(fallbackMethod = "fallbackFindPolicyByIdNumber")
     public List<Policy> findPolicyByIdNumber(String idNumber) {
         List<Policy> policy = policyRepository.findByIdNumber(idNumber);
-        policy.stream().filter(Objects::nonNull)
-                .collect(Collectors.toList()).forEach(p -> {
-            List<Claim> claims = claimClient.findClaimByPolicyNo(p.getPolicyNo());
-            p.setClaims(claims);
-        });
         return policy;
     }
     private Policy fallbackFindPolicyByIdNumber() {
