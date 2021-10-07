@@ -1,5 +1,15 @@
-# Read Me First
-The following was discovered as part of building this project:
+# Microservice-SpringCloud-NetflixEureka
+
+This project is example Microservice project use Netflix Eureka and Spring cloud config.
+
+The project contains eureka-service , configuration-service,claim-service,policy-service,customer-service.
+
+
+ 
+
+
+
+
 
 # Getting Started
 
