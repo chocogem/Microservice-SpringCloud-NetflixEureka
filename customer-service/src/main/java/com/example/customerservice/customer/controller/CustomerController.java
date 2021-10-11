@@ -25,7 +25,10 @@ public class CustomerController {
     public Customer findCustomerByCustomerId(@PathVariable String customerId) {
         return customerService.findCustomerByCustomerId(customerId);
     }
-
+    @GetMapping("/hello")
+    public String hello() {
+        return "hello";
+    }
     @PostMapping("/add")
     public Customer addNewCustomer(@RequestBody Customer customer) {
          return customerService.addCustomer(customer);
