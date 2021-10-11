@@ -1,12 +1,47 @@
-# Read Me First
-The following was discovered as part of building this project:
+# Microservice-SpringCloud-NetflixEureka
+
+This project is example Microservice project use Netflix Eureka and Spring cloud config.
+
+The project contains eureka-service , configuration-service,claim-service,policy-service,customer-service.
+
+[![Microservice-Example.png](https://i.postimg.cc/pdDrvyZC/Microservice-Example.png)](https://postimg.cc/5H2bq4DQ)
+
+                                       Service Relation
+ 
+
+
+
+
 
 # Getting Started
 
-### Reference Documentation
-For further reference, please consider the following sections:
+1.You need to install MongoDB also can use MongoDB on Docker.
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.5.6-SNAPSHOT/maven-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.5.6-SNAPSHOT/maven-plugin/reference/html/#build-image)
+2.Move service cloud config .yml files to yours repo .
+
+- claim-service.yml
+
+- policy-service.yml
+
+- claim-service.yml
+
+(in this example project setting on file:///${user.home}/config-repo)
+
+3.Start eureka-service , configuration-service ,claim-service ,policy-service,customer-service
+ 
+
+
+## Built With
+
+* Intelij 2020.1.1
+* Maven
+* Java
+* Spring boot
+* MongoDb
+* Eureka
+* Spring cloud
+
+## Authors
+
+* **Chocogem** - *Initial work* - [chocogem](https://github.com/chocogem)
 
