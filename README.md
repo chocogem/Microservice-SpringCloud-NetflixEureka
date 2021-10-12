@@ -4,7 +4,7 @@ This project is example Microservice project use Netflix Eureka and Spring cloud
 
 The project contains eureka-service , configuration-service,claim-service,policy-service,customer-service.
 
-[![Microservice-Example.png](https://i.postimg.cc/pdDrvyZC/Microservice-Example.png)](https://postimg.cc/5H2bq4DQ)
+[![Microservice-Example.png](https://i.postimg.cc/fRzSqdPS/Microservice-Example.png)](https://postimg.cc/SJPKJnkm)
 
                                        Service Relation
  
