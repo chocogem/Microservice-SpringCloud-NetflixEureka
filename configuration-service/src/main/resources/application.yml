@@ -4,17 +4,18 @@ server:
 spring:
   application:
     name: configuration-server
-  profiles:
-    active: composite
+#  profiles:
+#    active: composite
   cloud:
     config:
       server:
-        composite:
-          - type: native
-            search-locations: file:///${user.home}/config-repo
         bootstrap: true
-        #git:
+        git:
+          uri: https://github.com/chocogem/application-config
         # uri: file:///${user.home}/config-repo
+#        composite:
+#          - type: native
+#            search-locations: file:///${user.home}/config-repo
 
 eureka:
   instance:
