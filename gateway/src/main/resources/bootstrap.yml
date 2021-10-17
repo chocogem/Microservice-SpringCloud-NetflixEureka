@@ -6,7 +6,7 @@ spring:
     name: gateway
   cloud:
     config:
-      name: gateway-kube
+      name: gateway
       discovery:
         enabled: true
         service-id: configuration-server
